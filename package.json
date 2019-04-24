@@ -1,0 +1,26 @@
+{
+	"name": "vanilla-fade",
+	"version": "0.0.0",
+	"description": "VanillaJS implementation of the JQuery fade methods ",
+	"main": "dist/fade.js",
+	"module": "dist/fade.mjs",
+	"jsnext:main": "dist/fade.mjs",
+	"repository": "https://github.com/matteobad/vanilla-fade.git",
+	"author": "Matteo Badini <matteo.badini@ynap.com>",
+	"license": "MIT",
+	"dependencies": {},
+	"devDependencies": {
+		"rollup": "^1.10.1",
+		"rollup-plugin-eslint": "^5.1.0",
+		"rollup-plugin-terser": "^4.0.4"
+	},
+	"scripts": {
+		"build": "rollup -c rollup.config.js --environment BUILD:production",
+		"watch": "rollup -c rollup.config.js --environment BUILD:development -w",
+		"preversion": "npm test",
+		"version": "npm run build",
+		"postversion": "git push && git push --tags",
+		"prepublish": "npm run build",
+		"test": "echo \"Error: no test specified\" && exit 0"
+	}
+}
