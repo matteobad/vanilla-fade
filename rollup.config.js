@@ -12,7 +12,7 @@ if (!isDev) {
 }
 
 export default {
-	input: 'src/fade.js',
+	input: 'src/vanilla-fade.js',
 	output: [
 		{
 			file: pkg.main,
