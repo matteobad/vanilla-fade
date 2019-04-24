@@ -1,0 +1,10 @@
+# Directories
+.npm/
+example/
+src/
+
+# Files
+.DS_STORE
+.eslintcache
+npm-debug.log*
+rollup.*.js
