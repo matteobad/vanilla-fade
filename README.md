@@ -1,6 +1,6 @@
 # vanilla-fade
 
-[![npm version](https://badge.fury.io/js/vanilla-fade.svg)](https://badge.fury.io/js/vanilla-fade) [![Build Status](https://travis-ci.org/matteobad/vanilla-fade.svg?branch=master)](https://travis-ci.org/matteobad/vanilla-fade/)
+[![npm version](https://badge.fury.io/js/vanilla-fade.svg)](https://badge.fury.io/js/vanilla-fade) [![Build Status](https://travis-ci.org/matteobad/vanilla-fade.svg?branch=master)](https://travis-ci.org/matteobad/vanilla-fade/) [![Greenkeeper badge](https://badges.greenkeeper.io/matteobad/vanilla-fade.svg)](https://greenkeeper.io/)
 
 Vanilla js implementation of the JQuery fade methods. the `fadeIn()` and `fadeOut()` methods will be added to the `Element` prototype and can be used with different options.
 
