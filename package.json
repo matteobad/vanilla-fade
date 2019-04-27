@@ -7,9 +7,9 @@
   "jsnext:main": "dist/vanilla-fade.mjs",
   "author": "Matteo Badini <matteo.badini95@gmail.com>",
   "license": "MIT",
-  "homepage": "https://github.com/matteobad/focus-within-polyfill#readme",
+  "homepage": "https://github.com/matteobad/vanilla-fade#readme",
   "repository": "https://github.com/matteobad/vanilla-fade.git",
-  "bugs": "https://github.com/matteobad/focus-within-polyfill/issues",
+  "bugs": "https://github.com/matteobad/vanilla-fade/issues",
   "keywords": [
     "fade",
     "fadeIn",

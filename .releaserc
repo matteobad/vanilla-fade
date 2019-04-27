@@ -7,5 +7,5 @@
     "@semantic-release/changelog",
     "@semantic-release/git"
   ],
-  "repositoryUrl": "https://github.com/matteobad/vanilla-focus.git"
+  "repositoryUrl": "https://github.com/matteobad/vanilla-fade.git"
 }
