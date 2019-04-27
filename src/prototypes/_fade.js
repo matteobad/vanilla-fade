@@ -20,7 +20,7 @@ function fade(duration, easing, animation, complete) {
 			console.warn(`Element.prototype.fade():
 			param [duration] => ${duration} is not a number.`)
 		} else {
-			duration = !prefersReduceMotion ? duration : 1
+			duration = !prefersReduceMotion() ? duration : 1
 		}
 	}
 
