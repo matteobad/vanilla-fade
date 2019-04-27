@@ -6,22 +6,99 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>VanillaJS - fade animations</title>
 
+	<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic">
+	<link rel="stylesheet" href="//cdn.rawgit.com/necolas/normalize.css/master/normalize.css">
+	<link rel="stylesheet" href="//cdn.rawgit.com/milligram/milligram/master/dist/milligram.min.css">
 	<style>
+		body {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+		}
 		.main {
 			display: flex;
-			height: 200px;
-			width: 200px;
-			background: lightcoral;
-			opacity: .3;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			height: 100vh;
+			width: 100vw;
+		}
+
+		.section, .aside {
+			height: 50%;
+			width: 100%;
+		}
+
+		.section {
+			position: absolute;
+			top: 0;
+			background: #9b4dca;
+			opacity: .5;
+		}
+
+		.aside {
+			position: absolute;
+			bottom: 0;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			padding: 2rem;
+			box-sizing: border-box;
 		}
 	</style>
 </head>
 <body>
+	<header id="header" class="header"></header>
+	<main id="main" class="main">
+		<section id="section" class="section">
 
-	<main id="main" class="main"></main>
+		</section>
+
+		<aside id="aside" class="aside">
+			<form id="form">
+				<fieldset>
+					<label for="duration">Duration</label>
+					<input type="number" placeholder="250" value="250" id="duration">
+					<label for="ease">Easing function</label>
+					<select id="ease">
+						<option value="linear">linear</option>
+						<option value="quadratic">quadratic</option>
+						<option value="swing">swing</option>
+						<option value="circ">circ</option>
+						<option value="bounce">bounce</option>
+					</select>
+					<div class="float-right">
+					</div>
+					<button id="fade-in" class="button-primary">Element.fadeIn()</button>
+					<button id="fade-out" class="button-primary">Element.fadeOut()</button>
+				</fieldset>
+			</form>
+		</aside>
+	</main>
+
+
+
 
 	<script src="../dist/vanilla-fade.js"></script>
-	<!-- <script type="module" src="../dist/vanilla-fade.mjs"></script> -->
+	<script>
+	var box = document.getElementById('section')
+	var fadeIn = document.getElementById('fade-in')
+	var fadeOut = document.getElementById('fade-out')
+	var duration = document.getElementById('duration')
+	var ease = document.getElementById('ease')
+
+	fadeIn.addEventListener('click', function(e) {
+		e.preventDefault()
+		box.fadeIn(parseInt(duration.value), ease.options[ease.selectedIndex].value)
+	})
+
+	fadeOut.addEventListener('click', function(e) {
+		e.preventDefault()
+		box.fadeOut(parseInt(duration.value), ease.options[ease.selectedIndex].value)
+	})
+	</script>
 
 </body>
 </html>
