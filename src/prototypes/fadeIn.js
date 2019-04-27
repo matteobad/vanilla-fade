@@ -1,6 +1,4 @@
-import animateElement from '../utils/animateElement'
-import easingAlgorithms from '../utils/easing'
-import validateParams from '../utils/validateParams'
+import fade from './_fade'
 
 /**
  * Fade in the current Element setting it's display property and then
@@ -12,18 +10,15 @@ import validateParams from '../utils/validateParams'
  * @returns {void}
  */
 function fadeIn(duration = 250, easing = 'linear', complete = null) {
-	validateParams({ duration, easing, complete })
 	var startOpacity = parseFloat(window.getComputedStyle(this).opacity)
 
-	if (startOpacity !== 1) {
-		var _easeFn = easingAlgorithms[easing]
-		var _fadeIn = (progress) => {
-			if (progress === 0) this.style.display = ''
-			this.style.opacity = startOpacity + (1 - startOpacity) * progress
-		}
+	var _fadeIn = (progress) => {
+		if (progress === 0) this.style.display = ''
+		this.style.opacity = startOpacity + (1 - startOpacity) * progress
+	}
 
-		var animate = animateElement(duration, _easeFn, _fadeIn, complete)
-		requestAnimationFrame(animate)
+	if (startOpacity !== 1) {
+		fade(duration, easing, _fadeIn, complete)
 	}
 }
 
