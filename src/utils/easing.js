@@ -1,4 +1,4 @@
-var easing = {
+const easingAlgorithms = {
 	linear: function(progress) {
 		return progress
 	},
@@ -32,4 +32,4 @@ var easing = {
 	}
 }
 
-export default easing
+export default easingAlgorithms

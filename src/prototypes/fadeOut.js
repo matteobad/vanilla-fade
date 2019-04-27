@@ -9,14 +9,15 @@ import animateElement from '../utils/animateElement'
  * @param {function} [complete=null] callback on completed animation
  */
 function fadeOut(duration = 250, easing = 'linear', complete = null) {
-	this.originalDisplay =  window.getComputedStyle(this).display
+	var startOpacity = window.getComputedStyle(this).opacity
+	if (startOpacity === 0) return
 
 	/**
 	 * Do animate
 	 * @param {number} progress
 	 */
 	var _fadeOut = (progress) => {
-		this.style.opacity = 1 - progress
+		this.style.opacity = startOpacity - startOpacity * progress
 		if (progress === 1) this.style.display = 'none'
 	}
 

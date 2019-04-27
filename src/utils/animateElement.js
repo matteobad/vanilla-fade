@@ -1,5 +1,3 @@
-import easings from './easings'
-
 /**
  * Animate the fadeIn fadeOut given the duration, easing and then
  * call the complete callback on finish.
@@ -21,7 +19,7 @@ function animateElement(duration, easing, animate, complete) {
 		var timeElapsed = time - timeStart
 		var progress = Math.min(timeElapsed / duration, 1)
 
-		animate(easings[easing](progress))
+		animate(easing(progress))
 
 		if (timeElapsed < duration) {
 			window.requestAnimationFrame(_animateElement)

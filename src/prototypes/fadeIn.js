@@ -1,4 +1,5 @@
 import animateElement from '../utils/animateElement'
+import easingAlgorithms from '../utils/easing'
 
 /**
  * Fade in the current Element setting it's display property and then
@@ -7,24 +8,36 @@ import animateElement from '../utils/animateElement'
  * @param {number} [duration=250] animation duration in milliseconds
  * @param {string} [easing='linear'] animation easing type
  * @param {function} [complete=null] callback on completed animation
+ * @returns {void}
  */
 function fadeIn(duration = 250, easing = 'linear', complete = null) {
-	var display = this.originalDisplay || window.getComputedStyle(this).display
-	this.style.display = (display !== 'none') ? display : 'block'
-
-	this.style.display = (this.originalDisplay !== 'none')
-		? this.originalDisplay
-		: 'block'
-
-	/**
-	 * Do animate
-	 * @param {number} progress
-	 */
-	var _fadeIn = (progress) => {
-		this.style.opacity = progress
+	if (duration && typeof duration !== 'number') {
+		throw new TypeError('fade(): first param is not a number.')
 	}
 
-	var animate = animateElement(duration, easing, _fadeIn, complete)
+	if (easing) {
+		if (!Object.keys(easingAlgorithms).contains(easing))
+			throw new TypeError('fade(): second param is not a string.')
+
+		if (typeof easing !== 'string')
+			throw new TypeError('fade(): second param is not a valid easing.')
+	}
+
+	if (complete && typeof complete !== 'function') {
+		throw new TypeError('fade(): third param is not a function.')
+	}
+
+	var startOpacity = window.getComputedStyle(this).opacity
+	if (startOpacity === 1) return
+
+	var _easing = easingAlgorithms[easing]
+
+	var _fadeIn = (progress) => {
+		if (progress === 0) this.style.display = ''
+		this.style.opacity = startOpacity + (1 - startOpacity) * progress
+	}
+
+	var animate = animateElement(duration, _easing, _fadeIn, complete)
 	requestAnimationFrame(animate)
 }
 
