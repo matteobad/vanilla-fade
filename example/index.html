@@ -52,9 +52,7 @@
 <body>
 	<header id="header" class="header"></header>
 	<main id="main" class="main">
-		<section id="section" class="section">
-
-		</section>
+		<section id="section" class="section"></section>
 
 		<aside id="aside" class="aside">
 			<form id="form">
@@ -71,6 +69,7 @@
 					</select>
 					<div class="float-right">
 					</div>
+					<button id="fade-toggle" class="button-primary">Element.fadeToggle()</button>
 					<button id="fade-in" class="button-primary">Element.fadeIn()</button>
 					<button id="fade-out" class="button-primary">Element.fadeOut()</button>
 				</fieldset>
@@ -78,16 +77,19 @@
 		</aside>
 	</main>
 
-
-
-
 	<script src="../dist/vanilla-fade.js"></script>
 	<script>
 	var box = document.getElementById('section')
+	var fadeToggle = document.getElementById('fade-toggle')
 	var fadeIn = document.getElementById('fade-in')
 	var fadeOut = document.getElementById('fade-out')
 	var duration = document.getElementById('duration')
 	var ease = document.getElementById('ease')
+
+	fadeToggle.addEventListener('click', function(e) {
+		e.preventDefault()
+		box.fadeToggle(parseInt(duration.value), ease.options[ease.selectedIndex].value)
+	})
 
 	fadeIn.addEventListener('click', function(e) {
 		e.preventDefault()

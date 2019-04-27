@@ -6,7 +6,7 @@
  * @return {boolean}
  */
 function prefersReduceMotion() {
-	return !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+	return window.matchMedia('(prefers-reduced-motion: reduce)').matches
 }
 
 export default prefersReduceMotion
