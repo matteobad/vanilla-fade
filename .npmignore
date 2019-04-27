@@ -2,9 +2,15 @@
 .npm/
 example/
 src/
+test/
 
 # Files
 .DS_STORE
+.editorconfig
 .eslintcache
+.npmignore
+.releaserc
+.travis.yml
+CONTRIBUTING.md
 npm-debug.log*
 rollup.*.js

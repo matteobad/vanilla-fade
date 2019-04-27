@@ -1,25 +1,25 @@
-import easings from './easings'
-
 /**
  * Animate the fadeIn fadeOut given the duration, easing and then
  * call the complete callback on finish.
  *
- * @param {Integer} duration animation duration in milliseconds
- * @param {String} easing animation easing type
+ * @param {number} duration animation duration in milliseconds
+ * @param {function} easing animation easing function
  * @param {function} animate animating function callback
  * @param {function} complete callback on completed animation
  */
 function animateElement(duration, easing, animate, complete) {
 	var timeStart
 
-	// create closure
+	/**
+	 * rAF callback
+	 * @param {number} time
+	 */
 	function _animateElement(time) {
 		if (!timeStart) timeStart = time
 		var timeElapsed = time - timeStart
 		var progress = Math.min(timeElapsed / duration, 1)
-		var completion = easings[easing](progress)
 
-		animate(completion)
+		animate(easing(progress))
 
 		if (timeElapsed < duration) {
 			window.requestAnimationFrame(_animateElement)

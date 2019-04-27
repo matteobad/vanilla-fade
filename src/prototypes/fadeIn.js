@@ -1,24 +1,30 @@
 import animateElement from '../utils/animateElement'
+import easingAlgorithms from '../utils/easing'
+import validateParams from '../utils/validateParams'
 
 /**
  * Fade in the current Element setting it's display property and then
  * animating its opacity.
  *
- * @param {Integer} duration animation duration in milliseconds
- * @param {String} easing animation easing type
- * @param {function} complete callback on completed animation
+ * @param {number} [duration=250] animation duration in milliseconds
+ * @param {string} [easing='linear'] animation easing type
+ * @param {function} [complete=null] callback on completed animation
+ * @returns {void}
  */
-function fadeIn(duration = 250, easing = 'linear', complete) {
-	var display = this.computedDisplay || window.getComputedStyle(this).display
-	this.style.display = (display !== 'none') ? display : 'block'
+function fadeIn(duration = 250, easing = 'linear', complete = null) {
+	validateParams({ duration, easing, complete })
+	var startOpacity = parseFloat(window.getComputedStyle(this).opacity)
 
-	// create closure
-	var _fadeIn = (completion) => {
-		this.style.opacity = completion
+	if (startOpacity !== 1) {
+		var _easeFn = easingAlgorithms[easing]
+		var _fadeIn = (progress) => {
+			if (progress === 0) this.style.display = ''
+			this.style.opacity = startOpacity + (1 - startOpacity) * progress
+		}
+
+		var animate = animateElement(duration, _easeFn, _fadeIn, complete)
+		requestAnimationFrame(animate)
 	}
-
-	var animate = animateElement(duration, easing, _fadeIn, complete)
-	requestAnimationFrame(animate)
 }
 
 export default fadeIn

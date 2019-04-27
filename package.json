@@ -1,32 +1,71 @@
 {
-	"name": "vanilla-fade",
-	"version": "0.1.1",
-	"description": "VanillaJS implementation of the JQuery fade methods.",
-	"main": "dist/vanilla-fade.js",
-	"module": "dist/vanilla-fade.mjs",
-	"jsnext:main": "dist/vanilla-fade.mjs",
-	"repository": "https://github.com/matteobad/vanilla-fade.git",
-	"author": "Matteo Badini <matteo.badini95@gmail.com>",
-	"license": "MIT",
-	"dependencies": {},
-	"devDependencies": {
-		"@babel/core": "^7.4.3",
-		"@babel/preset-env": "^7.4.3",
-		"rollup": "^1.10.1",
-		"rollup-plugin-babel": "^4.3.2",
-		"rollup-plugin-eslint": "^5.1.0",
-		"rollup-plugin-terser": "^4.0.4"
-	},
-	"scripts": {
-		"build": "rollup -c rollup.config.js --environment BUILD:production",
-		"watch": "rollup -c rollup.config.js --environment BUILD:development -w",
-		"preversion": "npm test",
-		"version": "npm run build",
-		"postversion": "git push && git push --tags",
-		"prepublish": "npm run build",
-		"test": "echo \"Error: no test specified\" && exit 0"
-	},
-	"browserslist": [
-		"defaults"
-	]
+  "name": "vanilla-fade",
+  "version": "0.0.0-development",
+  "description": "VanillaJS implementation of the JQuery fade methods.",
+  "main": "dist/vanilla-fade.js",
+  "module": "dist/vanilla-fade.mjs",
+  "jsnext:main": "dist/vanilla-fade.mjs",
+  "author": "Matteo Badini <matteo.badini95@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/matteobad/focus-within-polyfill#readme",
+  "repository": "https://github.com/matteobad/vanilla-fade.git",
+  "bugs": "https://github.com/matteobad/focus-within-polyfill/issues",
+  "keywords": [
+    "fade",
+    "fadeIn",
+    "fadeOut",
+    "fadeToggle",
+    "animation",
+    "no-jquery",
+    "vanilla",
+    "vanilla-js"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.4.3",
+    "@babel/preset-env": "^7.4.3",
+    "@commitlint/cli": "^7.5.2",
+    "@commitlint/config-conventional": "^7.5.0",
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/commit-analyzer": "^6.1.0",
+    "@semantic-release/git": "^7.0.8",
+    "@semantic-release/npm": "^5.1.4",
+    "@semantic-release/release-notes-generator": "^7.1.4",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "eslint": "^5.16.0",
+    "husky": "^2.1.0",
+    "rimraf": "^2.6.3",
+    "rollup": "^1.10.1",
+    "rollup-plugin-babel": "^4.3.2",
+    "rollup-plugin-eslint": "^5.1.0",
+    "rollup-plugin-terser": "^4.0.4",
+    "semantic-release": "^15.13.3"
+  },
+  "scripts": {
+    "commit": "git-cz",
+    "clean": "rimraf dist",
+    "lint": "eslint src test",
+    "build": "rollup -c rollup.config.js --environment BUILD:production",
+    "watch": "rollup -c rollup.config.js --environment BUILD:development -w",
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "prepublishOnly": "npm run clean && npm run lint && npm run test && npm run build",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  }
 }
