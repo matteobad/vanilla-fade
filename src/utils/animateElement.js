@@ -3,7 +3,7 @@
  * call the complete callback on finish.
  *
  * @param {number} duration animation duration in milliseconds
- * @param {string} easing animation easing type
+ * @param {function} easing animation easing function
  * @param {function} animate animating function callback
  * @param {function} complete callback on completed animation
  */

@@ -1,4 +1,9 @@
 const easingAlgorithms = {
+	/**
+	 * Linear easing function
+	 * @param {number} progress
+	 * @returns {number}
+	 */
 	linear: function(progress) {
 		return progress
 	},
@@ -15,10 +20,6 @@ const easingAlgorithms = {
 		return 1 - Math.sin(Math.acos(progress))
 	},
 
-	back: function(progress, x) {
-		return Math.pow(progress, 2) * ((x + 1) * progress - x)
-	},
-
 	bounce: function(progress) {
 		for (var a = 0, b = 1; ; a += b, b /= 2) {
 			if (progress >= (7 - 4 * a) / 11) {
@@ -26,10 +27,6 @@ const easingAlgorithms = {
 			}
 		}
 	},
-
-	elastic: function(progress, x) {
-		return Math.pow(2, 10 * (progress - 1)) * Math.cos(20 * Math.PI * x / 3 * progress)
-	}
 }
 
 export default easingAlgorithms
