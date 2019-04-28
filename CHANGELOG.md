@@ -1,3 +1,20 @@
+# [1.0.0](https://github.com/matteobad/vanilla-fade/compare/v0.4.0...v1.0.0) (2019-04-28)
+
+
+### Code Refactoring
+
+* add strong check on params ([f6cc6dd](https://github.com/matteobad/vanilla-fade/commit/f6cc6dd))
+
+
+### Features
+
+* add fadeTo method to Element prototype ([b804a4a](https://github.com/matteobad/vanilla-fade/commit/b804a4a))
+
+
+### BREAKING CHANGES
+
+* the display property is not modified anymore
+
 # [0.4.0](https://github.com/matteobad/vanilla-fade/compare/v0.3.0...v0.4.0) (2019-04-27)
 
 
