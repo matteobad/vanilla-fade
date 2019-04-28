@@ -1,8 +1,7 @@
 import fade from './_fade'
 
 /**
- * Fade in the current Element setting it's display property and then
- * animating its opacity.
+ * Fade in the current Element animating its opacity.
  *
  * @param {number} [duration=250] animation duration in milliseconds
  * @param {string} [easing='linear'] animation easing type
@@ -10,15 +9,15 @@ import fade from './_fade'
  * @returns {void}
  */
 function fadeIn(duration = 250, easing = 'linear', complete = null) {
-	var startOpacity = parseFloat(window.getComputedStyle(this).opacity)
+	const startOpacity = parseFloat(window.getComputedStyle(this).opacity)
+	const finalOpacity = 1
 
-	var _fadeIn = (progress) => {
-		if (progress === 0) this.style.display = ''
-		this.style.opacity = startOpacity + (1 - startOpacity) * progress
+	const _fadeIn = (progress) => {
+		this.style.opacity = startOpacity + (finalOpacity - startOpacity) * progress
 	}
 
 	if (startOpacity !== 1) {
-		fade(duration, easing, _fadeIn, complete)
+		fade(duration, finalOpacity, easing, _fadeIn, complete)
 	}
 }
 

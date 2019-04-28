@@ -1,8 +1,7 @@
 import fade from './_fade'
 
 /**
- * Fade toggle the current Element setting it's display property and then
- * animating its opacity.
+ * Fade toggle the current Element animating its opacity.
  *
  * @param {number} [duration=250] animation duration in milliseconds
  * @param {string} [easing='linear'] animation easing type
@@ -10,19 +9,16 @@ import fade from './_fade'
  * @returns {void}
  */
 function fadeToggle(duration = 250, easing = 'linear', complete = null) {
-	var startOpacity = parseFloat(window.getComputedStyle(this).opacity)
+	const startOpacity = parseFloat(window.getComputedStyle(this).opacity)
+	const finalOpacity = (startOpacity < .5) ? 1 : 0
 
-	var _fadeToggle = (progress) => {
-		if (startOpacity < .5) {
-			if (progress === 0) this.style.display = ''
-			this.style.opacity = startOpacity + (1 - startOpacity) * progress
-		} else {
-			this.style.opacity = startOpacity - startOpacity * progress
-			if (progress === 1) this.style.display = 'none'
-		}
+	const _fadeToggle = (progress) => {
+		this.style.opacity = (startOpacity < .5)
+			? startOpacity + (finalOpacity - startOpacity) * progress
+			: startOpacity - startOpacity * progress
 	}
 
-	fade(duration, easing, _fadeToggle, complete)
+	fade(duration, finalOpacity, easing, _fadeToggle, complete)
 }
 
 export default fadeToggle
