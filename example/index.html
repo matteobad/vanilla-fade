@@ -59,6 +59,10 @@
 				<fieldset>
 					<label for="duration">Duration</label>
 					<input type="number" placeholder="250" value="250" id="duration">
+
+					<label for="opacity">Opacity</label>
+					<input type="number" placeholder="0" value="0" id="opacity">
+
 					<label for="ease">Easing function</label>
 					<select id="ease">
 						<option value="linear">linear</option>
@@ -67,11 +71,16 @@
 						<option value="circ">circ</option>
 						<option value="bounce">bounce</option>
 					</select>
-					<div class="float-right">
+
+					<div class="float-left">
+						<button id="fade-toggle" class="button-primary">fadeToggle()</button>
+						<button id="fade-to" class="button-primary">fadeTo()</button>
 					</div>
-					<button id="fade-toggle" class="button-primary">Element.fadeToggle()</button>
-					<button id="fade-in" class="button-primary">Element.fadeIn()</button>
-					<button id="fade-out" class="button-primary">Element.fadeOut()</button>
+
+					<div class="float-left">
+						<button id="fade-in" class="button-primary">fadeIn()</button>
+						<button id="fade-out" class="button-primary">fadeOut()</button>
+					</div>
 				</fieldset>
 			</form>
 		</aside>
@@ -79,26 +88,34 @@
 
 	<script src="../dist/vanilla-fade.js"></script>
 	<script>
-	var box = document.getElementById('section')
 	var fadeToggle = document.getElementById('fade-toggle')
+	var fadeTo = document.getElementById('fade-to')
 	var fadeIn = document.getElementById('fade-in')
 	var fadeOut = document.getElementById('fade-out')
+
+	var box = document.getElementById('section')
 	var duration = document.getElementById('duration')
+	var opacity = document.getElementById('opacity')
 	var ease = document.getElementById('ease')
 
 	fadeToggle.addEventListener('click', function(e) {
 		e.preventDefault()
-		box.fadeToggle(parseInt(duration.value), ease.options[ease.selectedIndex].value)
+		box.fadeToggle(duration.value, ease.options[ease.selectedIndex].value)
+	})
+
+	fadeTo.addEventListener('click', function(e) {
+		e.preventDefault()
+		box.fadeTo(duration.value, opacity.value, ease.options[ease.selectedIndex].value)
 	})
 
 	fadeIn.addEventListener('click', function(e) {
 		e.preventDefault()
-		box.fadeIn(parseInt(duration.value), ease.options[ease.selectedIndex].value)
+		box.fadeIn(duration.value, ease.options[ease.selectedIndex].value)
 	})
 
 	fadeOut.addEventListener('click', function(e) {
 		e.preventDefault()
-		box.fadeOut(parseInt(duration.value), ease.options[ease.selectedIndex].value)
+		box.fadeOut(duration.value, ease.options[ease.selectedIndex].value)
 	})
 	</script>
 
