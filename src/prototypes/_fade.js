@@ -12,7 +12,7 @@ import ease from '../utils/ease'
  * @param {function} complete callback on completed animation
  * @returns {void}
  */
-function fade(duration, opacity, easing, animation, complete) {
+function fade (duration, opacity, easing, animation, complete) {
 	let caller, value
 
 	// validate duration
@@ -20,23 +20,27 @@ function fade(duration, opacity, easing, animation, complete) {
 		caller = animation.name.replace('_', '')
 		value = parseInt(duration)
 
-		if (isNaN(value))
+		if (isNaN(value)) {
 			throw new TypeError(`Failed to execute '${caller}' on 'Element': parameter 1 ('duration') is not an number.')`)
+		}
 
-		if (value < 0)
+		if (value < 0) {
 			throw new TypeError(`Failed to execute '${caller}' on 'Element': parameter 1 ('duration') is not a valid number.')`)
+		}
 	}
 
 	// validate opacity
 	if (opacity) {
 		caller = animation.name.replace('_', '')
-		value =  parseFloat(opacity)
+		value = parseFloat(opacity)
 
-		if (isNaN(value))
+		if (isNaN(value)) {
 			throw new TypeError(`Failed to execute '${caller}' on 'Element': parameter 2 ('opacity') is not an number.')`)
+		}
 
-		if (value < 0 || value > 1)
+		if (value < 0 || value > 1) {
 			throw new TypeError(`Failed to execute '${caller}' on 'Element': parameter 2 ('opacity') is not a valid number.')`)
+		}
 	}
 
 	// validate easing
@@ -44,11 +48,13 @@ function fade(duration, opacity, easing, animation, complete) {
 		caller = animation.name.replace('_', '')
 		value = easing
 
-		if (typeof easing !== 'string')
+		if (typeof easing !== 'string') {
 			throw new TypeError(`Failed to execute '${caller}' on 'Element': parameter ('easing') is not an string.')`)
+		}
 
-		if (!ease.hasOwnProperty(value))
+		if (!ease.hasOwnProperty(value)) {
 			throw new TypeError(`Failed to execute '${caller}' on 'Element': parameter ('easing') is not a valid easing function.')`)
+		}
 	}
 
 	// validate callback

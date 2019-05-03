@@ -4,7 +4,7 @@ const ease = {
 	 * @param {number} progress
 	 * @returns {number}
 	 */
-	linear: function(progress) {
+	linear: function (progress) {
 		return progress
 	},
 	/**
@@ -12,7 +12,7 @@ const ease = {
 	 * @param {number} progress
 	 * @returns {number}
 	 */
-	quadratic: function(progress) {
+	quadratic: function (progress) {
 		return Math.pow(progress, 2)
 	},
 
@@ -21,7 +21,7 @@ const ease = {
 	 * @param {number} progress
 	 * @returns {number}
 	 */
-	swing: function(progress) {
+	swing: function (progress) {
 		return 0.5 - Math.cos(progress * Math.PI) / 2
 	},
 
@@ -30,7 +30,7 @@ const ease = {
 	 * @param {number} progress
 	 * @returns {number}
 	 */
-	circ: function(progress) {
+	circ: function (progress) {
 		return 1 - Math.sin(Math.acos(progress))
 	},
 
@@ -39,13 +39,13 @@ const ease = {
 	 * @param {number} progress
 	 * @returns {number}
 	 */
-	bounce: function(progress) {
+	bounce: function (progress) {
 		for (var a = 0, b = 1; ; a += b, b /= 2) {
 			if (progress >= (7 - 4 * a) / 11) {
 				return -Math.pow((11 - 6 * a - 11 * progress) / 4, 2) + Math.pow(b, 2)
 			}
 		}
-	},
+	}
 }
 
 export default ease

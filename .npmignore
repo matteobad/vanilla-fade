@@ -11,6 +11,12 @@ test/
 .npmignore
 .releaserc
 .travis.yml
-CONTRIBUTING.md
+# Directories
+.npm/
+docs/
+
+# Files
+.DS_STORE
+.eslintcache
 npm-debug.log*
 rollup.*.js

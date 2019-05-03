@@ -8,10 +8,10 @@
  * @param {function} complete callback on completed animation
  * @returns {function} _animate callback
  */
-function animate(duration, easing, animation, complete) {
+function animate (duration, easing, animation, complete) {
 	let timeStart
 
-	function _animate(time) {
+	function _animate (time) {
 		if (!timeStart) timeStart = time
 		let timeElapsed = time - timeStart
 		let progress = Math.min(timeElapsed / duration, 1)

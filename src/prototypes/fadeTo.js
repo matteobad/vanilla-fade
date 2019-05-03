@@ -9,7 +9,7 @@ import fade from './_fade'
  * @param {function} [complete=null] callback on completed animation
  * @returns {void}
  */
-function fadeTo(duration = 250, opacity = NaN, easing = 'linear', complete = null) {
+function fadeTo (duration = 250, opacity = NaN, easing = 'linear', complete = null) {
 	const startOpacity = parseFloat(window.getComputedStyle(this).opacity)
 	const finalOpacity = parseFloat(opacity)
 

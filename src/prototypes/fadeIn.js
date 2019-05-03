@@ -8,7 +8,7 @@ import fade from './_fade'
  * @param {function} [complete=null] callback on completed animation
  * @returns {void}
  */
-function fadeIn(duration = 250, easing = 'linear', complete = null) {
+function fadeIn (duration = 250, easing = 'linear', complete = null) {
 	const startOpacity = parseFloat(window.getComputedStyle(this).opacity)
 	const finalOpacity = 1
 
