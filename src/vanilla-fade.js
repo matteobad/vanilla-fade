@@ -7,4 +7,3 @@ window.Element.prototype.fadeIn = fadeIn
 window.Element.prototype.fadeOut = fadeOut
 window.Element.prototype.fadeTo = fadeTo
 window.Element.prototype.fadeToggle = fadeToggle
-
