@@ -13,8 +13,8 @@ function animate (duration, easing, animation, complete) {
 
 	function _animate (time) {
 		if (!timeStart) timeStart = time
-		let timeElapsed = time - timeStart
-		let progress = Math.min(timeElapsed / duration, 1)
+		const timeElapsed = time - timeStart
+		const progress = Math.min(timeElapsed / duration, 1)
 
 		animation(easing(progress))
 
