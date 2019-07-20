@@ -52,7 +52,7 @@ function fade (duration, opacity, easing, animation, complete) {
 			throw new TypeError(`Failed to execute '${caller}' on 'Element': parameter ('easing') is not an string.')`)
 		}
 
-		if (!ease.hasOwnProperty(value)) {
+		if (typeof ease[value] !== 'function') {
 			throw new TypeError(`Failed to execute '${caller}' on 'Element': parameter ('easing') is not a valid easing function.')`)
 		}
 	}
