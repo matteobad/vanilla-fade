@@ -1,6 +1,6 @@
 {
   "name": "vanilla-fade",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "VanillaJS implementation of the JQuery fade methods.",
   "main": "dist/vanilla-fade.js",
   "module": "dist/vanilla-fade.mjs",

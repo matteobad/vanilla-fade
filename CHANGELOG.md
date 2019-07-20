@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/matteobad/vanilla-fade/compare/v1.0.0...v1.0.1) (2019-07-20)
+
+
+### Bug Fixes
+
+* eslint errors ([888a6bd](https://github.com/matteobad/vanilla-fade/commit/888a6bd))
+
 # [1.0.0](https://github.com/matteobad/vanilla-fade/compare/v0.4.0...v1.0.0) (2019-04-28)
 
 
