@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/matteobad/vanilla-fade/compare/v1.0.1...v1.0.2) (2019-11-02)
+
+
+### Bug Fixes
+
+* update dev dependencies ([d1c3866](https://github.com/matteobad/vanilla-fade/commit/d1c38665ffe29a306ccbe651359638acefb145e4)), closes [#22](https://github.com/matteobad/vanilla-fade/issues/22)
+
 ## [1.0.1](https://github.com/matteobad/vanilla-fade/compare/v1.0.0...v1.0.1) (2019-07-20)
 
 
