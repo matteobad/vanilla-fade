@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/matteobad/vanilla-fade/compare/v1.0.2...v1.1.0) (2020-04-27)
+
+
+### Features
+
+* split module to reduce bundle size ([2dc538f](https://github.com/matteobad/vanilla-fade/commit/2dc538fc22884ae769011155c0474487fe4bd249))
+
 ## [1.0.2](https://github.com/matteobad/vanilla-fade/compare/v1.0.1...v1.0.2) (2019-11-02)
 
 
