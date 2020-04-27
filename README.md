@@ -1,6 +1,6 @@
-# Vanilla JS - fade
+# Vanilla JS - fade &nbsp; [![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/X8X81MJAP)
 
-[![npm version](https://badge.fury.io/js/vanilla-fade.svg)](https://badge.fury.io/js/vanilla-fade) ![David](https://img.shields.io/david/dev/matteobad/vanilla-fade.svg) ![David](https://img.shields.io/david/matteobad/vanilla-fade.svg) [![Build Status](https://travis-ci.org/matteobad/vanilla-fade.svg?branch=master)](https://travis-ci.org/matteobad/vanilla-fade/) [![Greenkeeper badge](https://badges.greenkeeper.io/matteobad/vanilla-fade.svg)](https://greenkeeper.io/) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md)
+[![npm version](https://badge.fury.io/js/vanilla-fade.svg)](https://badge.fury.io/js/vanilla-fade) ![David](https://img.shields.io/david/dev/matteobad/vanilla-fade.svg) ![David](https://img.shields.io/david/matteobad/vanilla-fade.svg) [![Build Status](https://travis-ci.org/matteobad/vanilla-fade.svg?branch=master)](https://travis-ci.org/matteobad/vanilla-fade/) [![Greenkeeper badge](https://badges.greenkeeper.io/matteobad/vanilla-fade.svg)](https://greenkeeper.io/) [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release) [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/) [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-v1.4%20adopted-ff69b4.svg)](code-of-conduct.md) 
 
 Simple **Vanilla JS** implementation of the `fadeIn()`, `fadeOut()`, `fadeTo()` and `fadeToggle()` methods. This little package once loaded will add the mentioned methods to the `Element` prototype. All of the above methods accept the same paramaters: [duration, easing, complete]. Furthermore the `prefers-reduce-motion` is natively supported. You can read more about it [here](https://developers.google.com/web/updates/2019/03/prefers-reduced-motion).
 
@@ -10,16 +10,33 @@ Simple **Vanilla JS** implementation of the `fadeIn()`, `fadeOut()`, `fadeTo()` 
 * [Broser support](#browser-support)
 * [Demo](https://matteobad.github.io/vanilla-fade)
 
+---
+
+**Find this usefull? ☕ [Buy me a coffee!](https://ko-fi.com/matteobad)**
+
+---
+
 ## Installation
 
 This package can be downloaded from the NPM registry `npm install vanilla-fade --save`. Or included in via a standard script tag from [this url](https://unpkg.com/vanilla-fade/dist/vanilla-fade.js). Once imported it will automatically initialize.
 
 ```javascript
-// ES5
+// IIFE
 <script src="https://unpkg.com/vanilla-fade/dist/vanilla-fade.js">
 
-// ES6
-import 'vanilla-fade';
+// CJS
+require('vanilla-fade/cjs'); // all the library
+require('vanilla-fade/cjs/fadeIn'); // single animation
+require('vanilla-fade/cjs/fadeOut'); // single animation
+require('vanilla-fade/cjs/fadeToggle'); // single animation
+require('vanilla-fade/cjs/fadeTo'); // single animation
+
+// ESM
+import 'vanilla-fade/esm'; // all the library
+import 'vanilla-fade/esm/fadeIn'; // single animation
+import 'vanilla-fade/esm/fadeOut'; // single animation
+import 'vanilla-fade/esm/fadeToggle'; // single animation
+import 'vanilla-fade/esm/fadeTo'; // single animation
 ```
 
 ## Usage

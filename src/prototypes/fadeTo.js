@@ -22,4 +22,4 @@ function fadeTo (duration = 250, opacity = NaN, easing = 'linear', complete = nu
 	}
 }
 
-export default fadeTo
+window.Element.prototype.fadeTo = fadeTo
