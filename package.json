@@ -2,9 +2,10 @@
   "name": "vanilla-fade",
   "version": "1.0.2",
   "description": "VanillaJS implementation of the JQuery fade methods.",
-  "main": "dist/vanilla-fade.js",
-  "module": "dist/vanilla-fade.mjs",
-  "jsnext:main": "dist/vanilla-fade.mjs",
+  "browser": "dist/vanilla-fade.js",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.mjs",
+  "jsnext:main": "dist/esm/index.mjs",
   "author": "Matteo Badini <matteo.badini95@gmail.com>",
   "license": "MIT",
   "homepage": "https://github.com/matteobad/vanilla-fade#readme",
@@ -24,6 +25,9 @@
     "no-jquery",
     "vanilla",
     "vanilla-js"
+  ],
+  "files": [
+    "dist/*"
   ],
   "dependencies": {},
   "devDependencies": {

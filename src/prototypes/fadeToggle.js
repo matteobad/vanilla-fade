@@ -21,4 +21,4 @@ function fadeToggle (duration = 250, easing = 'linear', complete = null) {
 	fade(duration, finalOpacity, easing, _fadeToggle, complete)
 }
 
-export default fadeToggle
+window.Element.prototype.fadeToggle = fadeToggle

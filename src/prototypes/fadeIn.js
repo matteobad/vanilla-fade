@@ -21,4 +21,4 @@ function fadeIn (duration = 250, easing = 'linear', complete = null) {
 	}
 }
 
-export default fadeIn
+window.Element.prototype.fadeIn = fadeIn

@@ -21,4 +21,4 @@ function fadeOut (duration = 250, easing = 'linear', complete = null) {
 	}
 }
 
-export default fadeOut
+window.Element.prototype.fadeOut = fadeOut
