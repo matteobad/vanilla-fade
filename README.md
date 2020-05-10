@@ -32,11 +32,11 @@ require('vanilla-fade/cjs/fadeToggle'); // single animation
 require('vanilla-fade/cjs/fadeTo'); // single animation
 
 // ESM
-import 'vanilla-fade/esm'; // all the library
-import 'vanilla-fade/esm/fadeIn'; // single animation
-import 'vanilla-fade/esm/fadeOut'; // single animation
-import 'vanilla-fade/esm/fadeToggle'; // single animation
-import 'vanilla-fade/esm/fadeTo'; // single animation
+import 'vanilla-fade/dist/esm'; // all the library
+import 'vanilla-fade/dist/esm/fadeIn'; // single animation
+import 'vanilla-fade/dist/esm/fadeOut'; // single animation
+import 'vanilla-fade/dist/esm/fadeToggle'; // single animation
+import 'vanilla-fade/dist/esm/fadeTo'; // single animation
 ```
 
 ## Usage
